@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id= "L1" class="listdependencyInjection.Library">
+        <property name="id" value="101"></property>
+        <property name="name" value="Friends"></property>
+        <property name="books">
+            <list>
+                <ref bean="B1"/>
+                <ref bean="B2"/>
+                <ref bean="B3"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id= "B1" class= "listdependencyInjection.Books">
+        <property name="BookId" value="123"></property>
+        <property name="BookName" value="abc"></property>
+
+    </bean>
+
+    <bean id= "B2" class= "listdependencyInjection.Books">
+        <property name="BookId" value="124"></property>
+        <property name="BookName" value="abcd"></property>
+    </bean>
+
+    <bean id= "B3" class= "listdependencyInjection.Books">
+        <property name="BookId" value="125"></property>
+        <property name="BookName" value="abcde"></property>
+    </bean>
+
+</beans>
